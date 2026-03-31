@@ -20,7 +20,7 @@ STATICFILES_DIRS = [
     BASE_DIR / "portfolio/static",
 ]
 
-STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_ROOT = BASE_DIR / "jbendijo/staticfiles"
 
 
 # Quick-start development settings - unsuitable for production

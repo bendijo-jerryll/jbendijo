@@ -17,7 +17,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR "portfolio/static",
+    BASE_DIR / "portfolio" / "static",
 ]
 
 STATIC_ROOT = BASE_DIR / "staticfiles"

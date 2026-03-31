@@ -30,9 +30,16 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 SECRET_KEY = 'django-insecure-xbnxw26ur(3+==0fp7%*8h_s)va)51c!r5$$c=%+5pez1drlk0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'https://jerryllbendijo.pythonanywhere.com',
+    'www.jerryllbendijo.pythonanywhere.com',
+    '.pythonanywhere.com',
+    '127.0.0.1',
+    'localhost',
+]
+
 
 
 # Application definition
@@ -119,8 +126,7 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/6.0/howto/static-files/
 
-STATIC_URL = 'static/'
-STATICFILES_DIRS = [BASE_DIR / "portfolio" / "static"]
+# Use BigAutoField as the default primary key type
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+

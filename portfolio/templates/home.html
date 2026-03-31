@@ -1,0 +1,131 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="{% static 'image/favicon.ico' %}">
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- Ripple plugin -->
+  <script src="https://cdn.jsdelivr.net/gh/sirxemic/jquery.ripples/dist/jquery.ripples-min.js"></script>
+
+
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <nav class="navbar">
+      <ul>
+        <li><a href="#home" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="#about" class="nav-link"><i class="fas fa-user"></i> About</a></li>
+        <li><a href="#skills" class="nav-link"><i class="fas fa-code"></i> Skills</a></li>
+        <li><a href="#projects" class="nav-link"><i class="fas fa-briefcase"></i> Projects</a></li>
+        <li><a href="#education" class="nav-link"><i class="fas fa-graduation-cap"></i> Education</a></li>
+        <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Sections -->
+  <section id="home" class="hero">
+    <div class="overlay">
+      <h1>Hello, I’m Jerryll Queen</h1>
+      <p>I am passionate about designing a website  and interactivity.</p>
+      <a href="#projects" class="btn">View My Work</a>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <p>Hello, I’m Jerryll Queen, an aspiring web developer with a passion for creating dynamic, user‑friendly, and visually engaging websites. My journey in web development is driven by curiosity and a love for clean, responsive design. I enjoy blending technical problem‑solving with creativity,whether it’s building interactive layouts, experimenting with animations, or refining workflows for accessibility and usability.
+
+I’m currently honing my skills in HTML, CSS, JavaScript, and Python/Django, while exploring modern frameworks and design practices to bring ideas to life. My goal is to grow into a full‑stack developer who can craft professional web applications that balance functionality with polished user experience.</p>
+  </section>
+
+  <section id="skills" class="section">
+    <h2>Skills</h2>
+    <ul class="skills-list">
+      <li>HTML & CSS</li>
+      <li>JavaScript</li>
+      <li>Python/Django</li>
+    </ul>
+  </section>
+
+  <section id="projects" class="section">
+  <h2 class="projects-title">Projects</h2>
+  <div class="projects-container">
+    <div class="project-card">
+      <h3>Portfolio Website</h3>
+      <p>A responsive portfolio built with HTML, CSS, and Django templates.</p>
+      <a href="#">View on GitHub</a>
+    </div>
+    <div class="project-card">
+      <h3>Web App</h3>
+      <p>I'm still learning…</p>
+      <a href="#">View on GitHub</a>
+    </div>
+  </div>
+</section>
+
+
+  <section id="education" class="section">
+    <h2>Education</h2>
+    <p>Bachelor of Science in Information Technology(2023–2026)</p>
+    <p>Negros Oriental State University</p>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+  <div class="contact-links">
+    <a href="https://www.facebook.com/jrrll.bendijo" target="_blank" class="contact-icon">
+      <i class="fab fa-facebook"></i> 
+    </a>
+  
+    <a href="mailto:bendijojerryll@gmail.com" class="contact-icon">
+      <i class="fas fa-envelope"></i>
+    </a>
+  </div>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>JERRYLL QUEEN BENDIJO</p>
+  </footer>
+
+  <!-- Correct static reference for JS -->
+  <script src="{% static 'js/script.js' %}"></script>
+  <script>
+    document.querySelectorAll('.btn').forEach(button => {
+    button.addEventListener('click', function(e) {
+    const ripple = document.createElement('span');
+    ripple.classList.add('ripple');
+
+    const rect = this.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    ripple.style.width = ripple.style.height = size + 'px';
+    ripple.style.left = e.clientX - rect.left - size / 2 + 'px';
+    ripple.style.top = e.clientY - rect.top - size / 2 + 'px';
+
+    this.appendChild(ripple);
+
+    setTimeout(() => ripple.remove(), 600);
+  });
+});
+</script>
+
+</body>
+</html>
